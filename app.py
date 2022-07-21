@@ -116,14 +116,14 @@ def uploadVideo():
                 newfilename=str(dt.now().strftime("%Y%m%d%H%M%S%p"))+filename
 
                 # time.sleep(20)
-
+                file.seek(0)
                 # Saves File in Static/Videos Directory 
                 file.save(os.path.join(app.config["VIDEO_UPLOADS"],newfilename))
 
                 # Get Size of the Video in MB
                 videoSize=getVideoSize(file)
                 domain=request.host_url
-                video=Videos(f"domainstatic/Videos/"+newfilename,videoSize,duration)
+                video=Videos(f"{domain}static/Videos/"+newfilename,videoSize,duration)
                 
                 # Adding Video reference to the database table
                 db.session.add(video)
@@ -274,7 +274,7 @@ def checkVideoExtension(filename):
 @app.errorhandler(413)
 def request_entity_too_large(error):
     """
-        --- This is an handled error for too large entity than the limit 1GB 
+        --- This is a handled error for too large entity than the limit 1GB 
         --- Returns video size error 
     """
     resp=jsonify({"error":"Video File should be less than 1 GB"})

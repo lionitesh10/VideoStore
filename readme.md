@@ -1,3 +1,12 @@
+## To Run This Script
+
+Create your Virtual Environment ::
+    **python -m venv venv**
+    Activate Virtual Environment :
+    Then
+    **pip install -r requirements.txt**
+    Then Run:
+#### **app.py file** python app.py
 
 ## API Endpoints
 

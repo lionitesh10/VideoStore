@@ -14,11 +14,12 @@ Create your Virtual Environment ::
     On Get Request on :: http://127.0.0.1:5000/
     Result:
         {
-            "APIEndpoints": "Api Endpoints", 
-            "BeingUploaded": "http://127.0.0.1:5000/uploadingLists/", 
-            "Charges": "http://127.0.0.1:5000/charges/", 
-            "FilterBySizeRange(MB)": "http://127.0.0.1:5000/filter?size1=[size1]&size2=[size2]", 
-            "FilterByUploadedDate(YYYY-MM-DD)": "http://127.0.0.1:5000/filter?date=[date]", 
+            "APIEndpoints": "Api Endpoints",
+            "AllVideos": "http://127.0.0.1:5000/allVideos/",
+            "BeingUploaded": "http://127.0.0.1:5000/uploadingLists/",
+            "Charges": "http://127.0.0.1:5000/charges/",
+            "FilterBySizeRange(MB)": "http://127.0.0.1:5000/filter?size1=[size1]&size2=[size2]",
+            "FilterByUploadedDate(YYYY-MM-DD)": "http://127.0.0.1:5000/filter?date=[date]",
             "VideoUpload": "http://127.0.0.1:5000/uploadvideo/"
         }
 

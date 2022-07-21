@@ -1,7 +1,6 @@
 import os
 import time
 from datetime import datetime as dt
-from webbrowser import get
 from flask import *
 from werkzeug.utils import secure_filename
 from flask_sqlalchemy import SQLAlchemy

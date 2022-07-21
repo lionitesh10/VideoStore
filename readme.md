@@ -33,6 +33,9 @@ Create your Virtual Environment ::
     On Get Request on:: http://127.0.0.1:5000/uploadingLists
         --- Just after you request upload post file keep on checking this get request on next tab
 
+#### Get All the Videos Details on the Server
+    On Get Request on:: http://127.0.0.1:5000/allVideos/
+
 ### Filter API (Filter Videos according to Uploaded Date or Size Range) :
     On Get Request with Arguments on:: 
         --- For Date Format (YYYY-MM-DD)

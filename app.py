@@ -81,7 +81,8 @@ def index():
         "BeingUploaded":f"{domain}uploadingLists/",
         "FilterByUploadedDate(YYYY-MM-DD)":f"{domain}filter?date=[date]",
         "FilterBySizeRange(MB)":f"{domain}filter?size1=[size1]&size2=[size2]",
-        "Charges":f"{domain}charges/"
+        "Charges":f"{domain}charges/",
+        "AllVideos":f"{domain}allVideos/"
     })
 
 @app.route('/uploadvideo/',methods=["Post"])
@@ -151,6 +152,18 @@ def getUploadingVideosList():
         --- Current uploads are being tracked on Uploading Lists
     """
     resp=jsonify({"list":UploadingList})
+    resp.status_code=200
+    return resp
+
+
+@app.route("/allVideos/",methods=['Get'])
+def getAllVideos():
+    """
+        --- This function returns the json List of all the video details stored on the server    
+    """
+    videos=Videos.query.all()
+    videosList=[video.as_dict() for video in videos]
+    resp=jsonify(videosList)
     resp.status_code=200
     return resp
 

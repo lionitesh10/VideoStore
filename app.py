@@ -17,9 +17,9 @@ from helperscript import *
 """
 
 app=Flask(__name__)
+app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024 * 1024
 app.config["VIDEO_UPLOADS"]="static/Videos"
 app.config["ALLOWED_VIDEO_EXTENSIONS"]=["mp4","mkv"]
-app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024 * 1024
 app.config ['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///VideoStore.sqlite3'
 
 

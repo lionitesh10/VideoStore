@@ -115,7 +115,7 @@ def uploadVideo():
 
                 newfilename=str(dt.now().strftime("%Y%m%d%H%M%S%p"))+filename
 
-                # time.sleep(20)
+                time.sleep(10)
                 file.seek(0)
                 # Saves File in Static/Videos Directory 
                 file.save(os.path.join(app.config["VIDEO_UPLOADS"],newfilename))

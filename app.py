@@ -4,6 +4,7 @@ from datetime import datetime as dt
 from flask import *
 from werkzeug.utils import secure_filename
 from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS
 
 from helperscript import *
 
@@ -21,6 +22,7 @@ app.config["VIDEO_UPLOADS"]="static/Videos"
 app.config["ALLOWED_VIDEO_EXTENSIONS"]=["mp4","mkv"]
 app.config ['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///VideoStore.sqlite3'
 
+CORS(app)
 
 # Creating SQLAlchemy Object db 
 db=SQLAlchemy(app)
@@ -78,8 +80,8 @@ def index():
         "APIEndpoints":"Api Endpoints",
         "VideoUpload":f"{domain}uploadvideo/",
         "BeingUploaded":f"{domain}uploadingLists/",
-        "FilterByUploadedDate(YYYY-MM-DD)":f"{domain}filter?date=[date]",
-        "FilterBySizeRange(MB)":f"{domain}filter?size1=[size1]&size2=[size2]",
+        "FilterByUploadedDate":f"{domain}filter?date=[date]",
+        "FilterBySizeRange":f"{domain}filter?size1=[size1]&size2=[size2]",
         "Charges":f"{domain}charges/",
         "AllVideos":f"{domain}allVideos/"
     })
